@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;600;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    font-family: 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+  }
+
+  /* 배경: 건물 외관 이미지 (좌측 가시성 확보) */
+  .bg-image {
+    position: absolute;
+    inset: 0;
+    background: {{ bg_image_css }};
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* 좌→우 선형 그라데이션 오버레이
+     좌측 0% → 우측 75% (#000000, 65~75% 투명도) */
+  .gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0.04) 25%,
+      rgba(0,0,0,0.42) 42%,
+      rgba(0,0,0,0.65) 55%,
+      rgba(0,0,0,0.75) 100%
+    );
+  }
+
+  /* ===== 상단 영역: 브랜드 + 주소 ===== */
+  .top-section {
+    position: absolute;
+    top: 40px;
+    right: 44px;
+    z-index: 2;
+    text-align: right;
+  }
+
+  .top-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+
+  /* Level 4: 브랜드/보조텍스트 */
+  .brand {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 3px;
+    text-transform: lowercase;
+  }
+
+  .slide-num {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* Level 2: 주소 (섹션 레이블급) */
+  .address {
+    font-size: 23px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== 중앙 영역: 가격 + 데이터 테이블 ===== */
+  .middle-section {
+    position: absolute;
+    bottom: 60px;
+    right: 44px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  /* 매각완료 라벨 (유일한 accent color 사용처) */
+  .price-label {
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFD700;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+  }
+
+  /* Level 1: 매각 금액 (최대 강조) */
+  .price-value {
+    font-size: 76px;
+    font-weight: 800;
+    color: #FFFFFF;
+    line-height: 1.0;
+    letter-spacing: -2px;
+  }
+
+  /* 구분선 */
+  .divider {
+    width: 480px;
+    height: 1px;
+    background: rgba(255,255,255,0.3);
+    margin: 32px 0 24px;
+  }
+
+  /* 데이터 테이블 */
+  .data-table {
+    width: 480px;
+    border-collapse: collapse;
+  }
+
+  .data-table tr + tr {
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .data-table td {
+    padding: 10px 0;
+    font-size: 22px;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  /* 지번 row: 첫 번째 행 강조 */
+  .data-table tr:first-child .value {
+    font-weight: 700;
+    color: rgba(255,255,255,0.95);
+    white-space: normal;
+    word-break: keep-all;
+  }
+
+  /* Level 2: 레이블 (좌측 정렬) */
+  .data-table .label {
+    font-weight: 400;
+    color: rgba(255,255,255,0.75);
+    text-align: left;
+  }
+
+  /* Level 3: 값 (우측 정렬, 최소 60px 간격) */
+  .data-table .value {
+    font-weight: 600;
+    color: #FFFFFF;
+    text-align: right;
+    padding-left: 60px;
+  }
+
+  /* ===== 하단 영역: 지도 + 주변역 ===== */
+  .bottom-section {
+    position: absolute;
+    bottom: 36px;
+    right: 44px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+
+  /* 지도 컨테이너 (1개만 표시) */
+  .map-container {
+    width: 420px;
+    height: 260px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+
+  .map-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* 지도 폴백 (이미지 없을 때) */
+  .map-fallback {
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .map-fallback .map-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.08;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .map-pin {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .map-pin-icon {
+    width: 16px;
+    height: 16px;
+    background: #EF4444;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+  }
+
+  .map-pin-text {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* 주변역 정보 (지도 최하단) */
+  .station-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .station-label {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 1px;
+  }
+
+  .station-value {
+    font-size: 19px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.95);
+  }
+
+  /* 면책 조항 */
+  .disclaimer {
+    position: absolute;
+    bottom: 16px;
+    left: 44px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.15);
+    z-index: 3;
+  }
+</style>
+</head>
+<body>
+  <div class="bg-image"></div>
+  <div class="gradient-overlay"></div>
+
+  <!-- 상단: 브랜드 + 주소 -->
+  <div class="top-section">
+    <div class="top-row">
+      <span class="brand">ELLA'S 1DAY WORKSHOP</span>
+      <span class="slide-num">{{ slide_number }}/{{ total_slides }}</span>
+    </div>
+    <div class="address">{{ address }}</div>
+  </div>
+
+  <!-- 중앙: 매각 금액 + 상세 정보 -->
+  <div class="middle-section">
+    <div class="price-label">{{ price_label }}</div>
+    <div class="price-value">{{ price_value }}</div>
+
+    <div class="divider"></div>
+
+    <table class="data-table">
+      {% for row in data_rows %}
+      <tr>
+        <td class="label">{{ row.label }}</td>
+        <td class="value">{{ row.value }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+
+  <div class="disclaimer">본 콘텐츠는 정보 제공 목적이며 투자 권유가 아닙니다.</div>
+</body>
+</html>

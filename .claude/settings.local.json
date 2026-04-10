@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.linkedin.com)",
+      "WebFetch(domain:ccforeveryone.com)",
+      "Bash(cp \"C:/Users/User/Desktop/02_REXA/marketing_agent/templates/instagram/card_cover.html\" \"C:/Users/User/Desktop/06_개인/나나님/templates/card_cover.html\")",
+      "Bash(cp \"C:/Users/User/Desktop/02_REXA/marketing_agent/templates/instagram/card_data.html\" \"C:/Users/User/Desktop/06_개인/나나님/templates/card_data.html\")",
+      "Bash(npx playwright:*)",
+      "Bash(python -c \"from playwright.sync_api import sync_playwright; print\\('playwright available'\\)\")",
+      "Bash(node render_cards.js)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(python -c ':*)",
+      "Bash(node -e \"const fs=require\\('fs'\\); const lines=fs.readFileSync\\('나나님_클로드코드_워크숍_워크북.md','utf8'\\).split\\('\\\\n'\\); const line=lines[558]; const m=line.match\\(/스\\\\S*로/\\); if\\(m\\){const w=m[0]; console.log\\(JSON.stringify\\(w\\)\\); for\\(const c of w\\){console.log\\(c, c.codePointAt\\(0\\).toString\\(16\\)\\)}}\")",
+      "Bash(python:*)",
+      "Bash(mkdir -p docs/.vitepress)",
+      "Bash(mkdir -p docs/part1)",
+      "Bash(mkdir -p docs/part2)",
+      "Bash(sed -n '1,18p' 나나님_클로드코드_워크숍_워크북.md)",
+      "Bash(sed -n '19,66p' 나나님_클로드코드_워크숍_워크북.md)",
+      "Bash(sed -n '67,150p' 나나님_클로드코드_워크숍_워크북.md)",
+      "Bash(sed -n '151,288p' 나나님_클로드코드_워크숍_워크북.md)",
+      "Bash(sed -n '289,435p' 나나님_클로드코드_워크숍_워크북.md)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/workshop/)",
+      "Bash(gh auth:*)",
+      "Bash(gh repo:*)",
+      "Bash(gh api:*)",
+      "Bash(gh run:*)"
+    ]
+  }
+}

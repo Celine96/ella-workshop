@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    font-family: 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    overflow: hidden;
+    position: relative;
+    background: #0F172A;
+  }
+
+  /* 배경 이미지 또는 그라디언트 */
+  .bg-image {
+    position: absolute;
+    inset: 0;
+    background: {{ bg_image_css }};
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* 실크 텍스처 오버레이 */
+  .silk-texture {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(15,23,42,0.0) 0%, rgba(15,23,42,0.6) 70%),
+      radial-gradient(ellipse at 70% 80%, rgba(249,115,22,0.06) 0%, transparent 50%);
+  }
+
+  /* 어두운 오버레이 */
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(15,23,42,0.55) 0%,
+      rgba(15,23,42,0.35) 40%,
+      rgba(15,23,42,0.50) 70%,
+      rgba(15,23,42,0.70) 100%
+    );
+  }
+
+  /* 컨텐츠 래퍼 - 중앙 정렬 */
+  .content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 52px;
+    z-index: 2;
+  }
+
+  /* 상단: 브랜드 + 슬라이드 번호 (절대 위치) */
+  .header {
+    position: absolute;
+    top: 44px;
+    left: 52px;
+    right: 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .brand {
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .slide-num {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.8);
+  }
+  .slide-num .current { color: #FFD700; }
+
+  /* 중앙: 메인 타이틀 영역 */
+  .center-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .accent-line {
+    width: 56px;
+    height: 4px;
+    background: #FFD700;
+    border-radius: 2px;
+    margin-bottom: 4px;
+  }
+
+  .category-badge {
+    display: inline-block;
+    background: rgba(249,115,22,0.15);
+    border: 1px solid rgba(249,115,22,0.4);
+    color: #FFD700;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 6px 18px;
+    border-radius: 6px;
+    letter-spacing: 1px;
+  }
+
+  .main-title {
+    font-size: 62px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.32;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.5);
+    letter-spacing: -1px;
+  }
+
+  .subtitle {
+    font-size: 30px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+    letter-spacing: 1px;
+  }
+
+  .bottom-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    color: rgba(255,255,255,0.45);
+    margin-top: 8px;
+  }
+  .bottom-info .dot { color: rgba(255,255,255,0.25); }
+</style>
+</head>
+<body>
+  <div class="bg-image"></div>
+  <div class="silk-texture"></div>
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="header">
+      <div class="brand">ELLA'S 1DAY WORKSHOP</div>
+      <div class="slide-num"><span class="current">{{ slide_number }}</span>/{{ total_slides }}</div>
+    </div>
+    <div class="center-block">
+      <div class="accent-line"></div>
+      {% if category %}<div class="category-badge">{{ category }}</div>{% endif %}
+      <div class="main-title">{{ title }}</div>
+      {% if subtitle %}<div class="subtitle">{{ subtitle }}</div>{% endif %}
+      <div class="bottom-info">
+        <span>ELLA'S 1DAY WORKSHOP</span>
+        <span class="dot">|</span>
+        <span>{{ date }}</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
