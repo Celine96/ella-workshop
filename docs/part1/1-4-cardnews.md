@@ -6,11 +6,9 @@
 
 아래는 이번 실습에서 클로드 코드로 만들어볼 카드뉴스 샘플입니다. 이런 결과물을 직접 만들어보겠습니다!
 
-<div style="display: flex; gap: 12px; justify-content: center; margin: 24px 0;">
-  <img src="/ella-workshop/images/slide_1_cover.png" alt="표지" style="width: 30%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);" />
-  <img src="/ella-workshop/images/slide_2_top.png" alt="최고가" style="width: 30%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);" />
-  <img src="/ella-workshop/images/slide_3_bottom.png" alt="최저가" style="width: 30%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);" />
-</div>
+![표지](/images/slide_1_cover.png){style="width: 30%; display: inline-block; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);"}
+![최고가](/images/slide_2_top.png){style="width: 30%; display: inline-block; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);"}
+![최저가](/images/slide_3_bottom.png){style="width: 30%; display: inline-block; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);"}
 
 ### [개념] 파이프라인 흐름
 
