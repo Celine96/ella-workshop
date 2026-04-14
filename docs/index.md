@@ -4,7 +4,7 @@ layout: home
 hero:
   name: "ELLA'S 1DAY WORKSHOP"
   text: "클로드 코드로 콘텐츠 제작 자동화하기"
-  tagline: 코딩 경험 없이도, AI-Native 방식으로 업무를 자동화할 수 있습니다.
+  tagline: 오늘 워크숍이 끝나면, 반복 업무를 AI에게 맡기는 방법을 알게 돼요!
   actions:
     - theme: brand
       text: 시작하기
