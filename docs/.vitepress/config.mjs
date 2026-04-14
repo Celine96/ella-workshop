@@ -33,12 +33,12 @@ export default defineConfig({
           { text: '2.2 PRD (제품 요구사항 문서)', link: '/part2/2-2-prd' },
           { text: '2.3 하네스 엔지니어링', link: '/part2/2-3-harness' },
           { text: '2.4 나만의 에이전트 만들기', link: '/part2/2-4-build' },
+          { text: '2.5 실무 팁', link: '/part2/2-5-tips' },
         ]
       },
       {
         text: '부록',
         items: [
-          { text: '실무 팁', link: '/tips' },
           { text: '참고 자료 & 다음 단계', link: '/appendix' },
         ]
       }
