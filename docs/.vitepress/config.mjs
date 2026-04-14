@@ -38,7 +38,8 @@ export default defineConfig({
       {
         text: '부록',
         items: [
-          { text: '실무 팁 & 참고 자료', link: '/appendix' },
+          { text: '실무 팁', link: '/tips' },
+          { text: '참고 자료 & 다음 단계', link: '/appendix' },
         ]
       }
     ],
