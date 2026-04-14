@@ -56,7 +56,6 @@ CLAUDE.md에 담으면 좋은 내용:
 
 | 자료 | 설명 |
 |------|------|
-| Claude Code for Everyone (ccforeveryone.com) | 클로드 코드 기초부터 에이전트까지 실습 |
 | Claude 101 (Anthropic 공식 과정) | 클로드 기초 개념 과정 |
 | 하네스 엔지니어링 해설 (LinkedIn, Seungpil Lee) | 비개발자를 위한 하네스 개념 설명 |
 | Anthropic 하네스 디자인 블로그 (2026.03.24) | 하네스 엔지니어링 원문 |
