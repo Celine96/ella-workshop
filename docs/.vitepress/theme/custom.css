@@ -1,17 +1,24 @@
-/* 3컬럼 표: 2번째·3번째 컬럼 너비 동일하게 */
+/* 표 기본 설정 */
 table {
   table-layout: fixed;
   width: 100%;
 }
 
-table th:nth-child(2),
-table td:nth-child(2),
-table th:nth-child(3),
-table td:nth-child(3) {
-  width: 43%;
+/* 2컬럼 표: 첫 번째 컬럼(명령어/단축키) 좁게, 두 번째 컬럼(설명) 넓게 */
+table:not(:has(th:nth-child(3))) th:nth-child(1),
+table:not(:has(th:nth-child(3))) td:nth-child(1) {
+  width: 25%;
 }
 
-table th:nth-child(2),
-table td:nth-child(2) {
-  min-width: 220px;
+table:not(:has(th:nth-child(3))) th:nth-child(2),
+table:not(:has(th:nth-child(3))) td:nth-child(2) {
+  width: 75%;
+}
+
+/* 3컬럼 이상 표: 2번째·3번째 컬럼 너비 동일 */
+table:has(th:nth-child(3)) th:nth-child(2),
+table:has(th:nth-child(3)) td:nth-child(2),
+table:has(th:nth-child(3)) th:nth-child(3),
+table:has(th:nth-child(3)) td:nth-child(3) {
+  width: 43%;
 }
