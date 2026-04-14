@@ -4,7 +4,14 @@
 
 ### 오늘 만들어볼 결과물
 
-아래는 이번 실습에서 클로드 코드로 만들어볼 카드뉴스 샘플이에요. 이런 결과물을 직접 만들어 볼게요!
+이번 실습에서는 아래 자동화 커맨드로 카드뉴스를 생성해 볼게요!
+
+```
+node render_cards.js --prepare   # 데이터 확인
+node render_cards.js --now       # 카드뉴스 생성
+```
+
+이 커맨드를 실행하면 아래와 같은 카드뉴스가 만들어져요:
 
 ![표지](/images/slide_1_cover.png){style="width: 30%; display: inline-block; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);"}
 ![최고가](/images/slide_2_top.png){style="width: 30%; display: inline-block; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);"}
