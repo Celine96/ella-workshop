@@ -47,7 +47,8 @@
       "Bash(sed -n '617,768p' 나나님_클로드코드_워크숍_워크북.md)",
       "Bash(sed -n '769,871p' 나나님_클로드코드_워크숍_워크북.md)",
       "Bash(sed -n '872,999p' 나나님_클로드코드_워크숍_워크북.md)",
-      "Bash(sed -n '1,514p' 나나님_클로드코드_워크숍_워크북.md)"
+      "Bash(sed -n '1,514p' 나나님_클로드코드_워크숍_워크북.md)",
+      "WebFetch(domain:www.anthropic.com)"
     ]
   }
 }
