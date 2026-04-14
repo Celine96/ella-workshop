@@ -41,7 +41,8 @@
       "Bash(sed -i '304,457d' 나나님_클로드코드_워크숍_워크북.md)",
       "Bash(sed -i '303r /tmp/1-4-new.md' 나나님_클로드코드_워크숍_워크북.md)",
       "Bash(node render_cards.js --prepare)",
-      "Bash(node render_cards.js --now)"
+      "Bash(node render_cards.js --now)",
+      "Bash(node -e ':*)"
     ]
   }
 }
