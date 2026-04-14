@@ -34,14 +34,14 @@ features:
     title: "2.1 에이전트 개념"
     details: "에이전트 / 서브에이전트 / 오케스트레이션"
     link: /part2/2-1-agents
-  - icon: "🔧"
-    title: "2.2 하네스 엔지니어링"
-    details: "AI 성능을 끌어올리는 운영 구조 설계"
-    link: /part2/2-2-harness
   - icon: "📋"
-    title: "2.3 PRD & 에이전트 정의서"
+    title: "2.2 PRD & 에이전트 정의서"
     details: "AI에게 주는 상세 업무 지시서 작성법"
-    link: /part2/2-3-prd
+    link: /part2/2-2-prd
+  - icon: "🔧"
+    title: "2.3 하네스 엔지니어링"
+    details: "AI 성능을 끌어올리는 운영 구조 설계"
+    link: /part2/2-3-harness
   - icon: "🚀"
     title: "2.4 나만의 에이전트 만들기"
     details: "본인의 실제 업무를 AI-Native로 자동화"
