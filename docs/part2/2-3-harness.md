@@ -65,7 +65,7 @@ Planner(기획자) → Generator(실행자) → Evaluator(검수자)
 | Generator (실행자) | 실제 콘텐츠를 생성합니다 |
 | Evaluator (검수자) | 결과물을 평가하고, 기준에 미달하면 재작업을 요청합니다 |
 
-> 이전 섹션(2.2)에서 살펴본 엘라의 마케팅 에이전트 시스템에서는: Max = Planner, Aria = Generator, Luna = Evaluator 역할을 맡고 있습니다.
+> 이전 섹션(2.1)에서 살펴본 엘라의 마케팅 에이전트 시스템에서는: Max = Planner, Aria = Generator, Luna = Evaluator 역할을 맡고 있습니다.
 
 ---
 

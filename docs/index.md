@@ -46,6 +46,10 @@ features:
     title: "2.4 나만의 에이전트 만들기"
     details: "본인의 실제 업무를 AI-Native로 자동화"
     link: /part2/2-4-build
+  - icon: "💡"
+    title: "2.5 실무 팁"
+    details: "CLAUDE.md 활용법 & 실무 프롬프트 4가지"
+    link: /part2/2-5-tips
 ---
 
 ## 워크북 사용법
