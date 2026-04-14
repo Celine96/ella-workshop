@@ -1,0 +1,6 @@
+/* 표 컬럼 너비 조정 - ChatGPT 컬럼 넓히기 */
+table th:nth-child(2),
+table td:nth-child(2) {
+  min-width: 220px;
+  white-space: nowrap;
+}
