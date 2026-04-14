@@ -105,8 +105,15 @@ function renderTemplate(html, vars) {
 }
 
 async function main() {
-  // 출력 폴더 생성
-  if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  const args = process.argv.slice(2);
+  const mode = args[0]; // --prepare 또는 --now
+
+  if (!mode || (mode !== '--prepare' && mode !== '--now')) {
+    console.log('사용법:');
+    console.log('  node render_cards.js --prepare   데이터 확인 (선별할 매물 확인)');
+    console.log('  node render_cards.js --now        카드뉴스 생성');
+    process.exit(0);
+  }
 
   // CSV 읽기
   const csvText = fs.readFileSync(CSV_PATH, 'utf-8');
@@ -138,6 +145,17 @@ async function main() {
     console.log(`    도로명: ${r['도로명']}`);
     console.log(`    용도: ${r['건축물주용도']} | 연면적: ${r['전용/연면적(㎡)']}㎡ | 대지면적: ${r['대지면적(㎡)']}㎡ | 건축년도: ${r['건축년도']}`);
   });
+
+  // --prepare 모드: 데이터 확인만 하고 종료
+  if (mode === '--prepare') {
+    console.log('\n데이터 확인 완료. 카드뉴스를 생성하려면 아래 명령어를 실행하세요:');
+    console.log('  node render_cards.js --now');
+    return;
+  }
+
+  // --now 모드: 카드뉴스 생성
+  // 출력 폴더 생성
+  if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
   // 템플릿 읽기
   const coverHtml = fs.readFileSync(path.join(TEMPLATE_DIR, 'card_cover.html'), 'utf-8');
