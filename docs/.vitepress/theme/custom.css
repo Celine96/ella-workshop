@@ -1,29 +1,29 @@
-/* 표 기본 설정 */
-table {
+/* 마크다운 표만 대상 (인라인 style이 있는 HTML table은 제외) */
+table:not([style]) {
   table-layout: fixed;
   width: 100%;
 }
 
-/* 2컬럼 표: 첫 번째 컬럼(명령어/단축키) 좁게, 두 번째 컬럼(설명) 넓게 */
-table:not(:has(th:nth-child(3))) th:nth-child(1),
-table:not(:has(th:nth-child(3))) td:nth-child(1) {
+/* 2컬럼 마크다운 표: 첫 번째 컬럼 좁게, 두 번째 넓게 */
+table:not([style]):not(:has(th:nth-child(3))) th:nth-child(1),
+table:not([style]):not(:has(th:nth-child(3))) td:nth-child(1) {
   width: 25%;
 }
 
-table:not(:has(th:nth-child(3))) th:nth-child(2),
-table:not(:has(th:nth-child(3))) td:nth-child(2) {
+table:not([style]):not(:has(th:nth-child(3))) th:nth-child(2),
+table:not([style]):not(:has(th:nth-child(3))) td:nth-child(2) {
   width: 75%;
 }
 
-/* 3컬럼 이상 표: 첫 번째 컬럼 넉넉하게, 나머지 균등 */
-table:has(th:nth-child(3)) th:nth-child(1),
-table:has(th:nth-child(3)) td:nth-child(1) {
+/* 3컬럼 이상 마크다운 표: 첫 번째 컬럼 넉넉하게, 나머지 균등 */
+table:not([style]):has(th:nth-child(3)) th:nth-child(1),
+table:not([style]):has(th:nth-child(3)) td:nth-child(1) {
   width: 22%;
 }
 
-table:has(th:nth-child(3)) th:nth-child(2),
-table:has(th:nth-child(3)) td:nth-child(2),
-table:has(th:nth-child(3)) th:nth-child(3),
-table:has(th:nth-child(3)) td:nth-child(3) {
+table:not([style]):has(th:nth-child(3)) th:nth-child(2),
+table:not([style]):has(th:nth-child(3)) td:nth-child(2),
+table:not([style]):has(th:nth-child(3)) th:nth-child(3),
+table:not([style]):has(th:nth-child(3)) td:nth-child(3) {
   width: 39%;
 }
