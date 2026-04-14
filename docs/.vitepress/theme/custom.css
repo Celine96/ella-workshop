@@ -1,6 +1,17 @@
-/* 표 컬럼 너비 조정 - ChatGPT 컬럼 넓히기 */
+/* 3컬럼 표: 2번째·3번째 컬럼 너비 동일하게 */
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+table th:nth-child(2),
+table td:nth-child(2),
+table th:nth-child(3),
+table td:nth-child(3) {
+  width: 43%;
+}
+
 table th:nth-child(2),
 table td:nth-child(2) {
   min-width: 220px;
-  white-space: nowrap;
 }
