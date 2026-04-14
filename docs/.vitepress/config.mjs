@@ -30,7 +30,7 @@ export default defineConfig({
         text: '2부: 에이전트 구축',
         items: [
           { text: '2.1 에이전트 개념', link: '/part2/2-1-agents' },
-          { text: '2.2 PRD & 에이전트 정의서', link: '/part2/2-2-prd' },
+          { text: '2.2 PRD (제품 요구사항 문서)', link: '/part2/2-2-prd' },
           { text: '2.3 하네스 엔지니어링', link: '/part2/2-3-harness' },
           { text: '2.4 나만의 에이전트 만들기', link: '/part2/2-4-build' },
         ]

@@ -35,7 +35,7 @@ features:
     details: "에이전트 / 서브에이전트 / 오케스트레이션"
     link: /part2/2-1-agents
   - icon: "📋"
-    title: "2.2 PRD & 에이전트 정의서"
+    title: "2.2 PRD (제품 요구사항 문서)"
     details: "AI에게 주는 상세 업무 지시서 작성법"
     link: /part2/2-2-prd
   - icon: "🔧"
