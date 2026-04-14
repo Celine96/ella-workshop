@@ -33,7 +33,13 @@
       "Bash(sed -n '159,296p' 나나님_클로드코드_워크숍_워크북.md)",
       "Bash(sed -n '297,450p' 나나님_클로드코드_워크숍_워크북.md)",
       "Bash(sed -n '459,576p' 나나님_클로드코드_워크숍_워크북.md)",
-      "WebFetch(domain:celine96.github.io)"
+      "WebFetch(domain:celine96.github.io)",
+      "Bash(cp docs/part1/1-2-install.md /tmp/1-2-new.md)",
+      "Bash(sed -i '84,165d' 나나님_클로드코드_워크숍_워크북.md)",
+      "Bash(sed -i '83r /tmp/1-2-new.md' 나나님_클로드코드_워크숍_워크북.md)",
+      "Bash(cp docs/part1/1-4-cardnews.md /tmp/1-4-new.md)",
+      "Bash(sed -i '304,457d' 나나님_클로드코드_워크숍_워크북.md)",
+      "Bash(sed -i '303r /tmp/1-4-new.md' 나나님_클로드코드_워크숍_워크북.md)"
     ]
   }
 }
