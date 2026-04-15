@@ -27,3 +27,20 @@ table:not([style]):has(th:nth-child(3)) th:nth-child(3),
 table:not([style]):has(th:nth-child(3)) td:nth-child(3) {
   width: 39%;
 }
+
+/* 모바일 반응형: 표 가로 스크롤 */
+@media (max-width: 768px) {
+  .vp-doc table,
+  .vp-doc table[style] {
+    table-layout: auto;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .vp-doc table th,
+  .vp-doc table td {
+    width: auto !important;
+    min-width: auto !important;
+  }
+}
