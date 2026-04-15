@@ -29,12 +29,19 @@ node render_cards.js --now       # 카드뉴스 생성
 📁 나나님/
 ├── 나나님_클로드코드_워크숍_워크북.md               ← 이 워크북
 ├── 실거래가_단계적매칭_서울전체_완전판_오차10%.csv   ← 실거래가 데이터
+├── render_cards.js                                 ← 자동화 커맨드 스크립트
 ├── templates/                                      ← 카드뉴스 HTML 템플릿
 │   ├── card_cover.html
 │   └── card_data.html
-└── images/                                         ← 건물 사진
-    ├── 마포구 양화로 141.png
-    └── 구로구 도림로10길 23.png
+├── images/                                         ← 건물 사진
+│   ├── 마포구 양화로 141.png
+│   └── 구로구 도림로10길 23.png
+└── .claude/commands/                               ← 실습 커맨드 (터미널에서 / 로 실행)
+    ├── 1-3-practice1-step1~3.md                    ← 1.3 연습 1
+    ├── 1-3-practice2-step1~3.md                    ← 1.3 연습 2
+    ├── 1-4-practice1-step1~3.md                    ← 1.4 실습 1
+    ├── 1-4-practice2-step1~2.md                    ← 1.4 실습 2
+    └── 2-4-step1~4.md                              ← 2.4 자율 실습
 ```
 
 ---
