@@ -48,7 +48,12 @@
       "Bash(sed -n '769,871p' 나나님_클로드코드_워크숍_워크북.md)",
       "Bash(sed -n '872,999p' 나나님_클로드코드_워크숍_워크북.md)",
       "Bash(sed -n '1,514p' 나나님_클로드코드_워크숍_워크북.md)",
-      "WebFetch(domain:www.anthropic.com)"
+      "WebFetch(domain:www.anthropic.com)",
+      "Bash(sed -i 's/^## 1\\\\.1/# 1.1/' part1/1-1-intro.md)",
+      "Bash(sed -i 's/^## 1\\\\.2/# 1.2/' part1/1-2-install.md)",
+      "Bash(sed -i 's/^## 1\\\\.3/# 1.3/' part1/1-3-commands.md)",
+      "Bash(sed -i 's/^## 1\\\\.4/# 1.4/' part1/1-4-cardnews.md)",
+      "Bash(sed -i 's/^## 2\\\\.1/# 2.1/' part2/2-1-agents.md)"
     ]
   }
 }
