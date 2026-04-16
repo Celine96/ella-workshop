@@ -9,7 +9,7 @@ const CSV_PATH = path.join(__dirname, '실거래가_단계적매칭_서울전체
 
 // CSV 파싱 (pandas 방식 참고 — 따옴표 내 콤마 처리)
 function parseCSV(text) {
-  const lines = text.split('\n').filter(l => l.trim());
+  const lines = text.replace(/\r/g, '').split('\n').filter(l => l.trim());
   // 헤더도 동일한 파서로 처리
   const parseRow = (line) => {
     const values = [];
@@ -116,6 +116,10 @@ async function main() {
   }
 
   // CSV 읽기
+  if (!fs.existsSync(CSV_PATH)) {
+    console.error(`CSV 파일을 찾을 수 없습니다: ${CSV_PATH}`);
+    process.exit(1);
+  }
   const csvText = fs.readFileSync(CSV_PATH, 'utf-8');
   const rows = parseCSV(csvText);
 
@@ -167,6 +171,7 @@ async function main() {
 
   // Playwright 브라우저 시작
   const browser = await chromium.launch();
+  try {
   const context = await browser.newContext({ viewport: { width: 1080, height: 1080 } });
 
   // === 슬라이드 1: 표지 ===
@@ -184,7 +189,7 @@ async function main() {
 
   const coverPage = await context.newPage();
   await coverPage.setContent(coverRendered, { waitUntil: 'networkidle' });
-  await coverPage.waitForTimeout(2000);
+
   await coverPage.screenshot({ path: path.join(OUTPUT_DIR, 'slide_1_cover.png'), type: 'png' });
   await coverPage.close();
   console.log('\nslide_1_cover.png 생성 완료');
@@ -238,17 +243,19 @@ async function main() {
 
     const dataPage = await context.newPage();
     await dataPage.setContent(dataRendered, { waitUntil: 'networkidle' });
-    await dataPage.waitForTimeout(2000);
+
     await dataPage.screenshot({ path: path.join(OUTPUT_DIR, `slide_${slideNum}_${label}.png`), type: 'png' });
     await dataPage.close();
     console.log(`slide_${slideNum}_${label}.png 생성 완료`);
   }
 
-  await browser.close();
   console.log(`\n완료! ${OUTPUT_DIR} 폴더에 총 ${totalSlides}장의 PNG가 생성되었습니다.`);
-  console.log(`\n※ 건물 이미지를 적용하려면 images/ 폴더에 아래 파일을 넣어주세요:`);
-  console.log(`   - top.jpg (또는 top.png) : 최고가 건물 사진`);
-  console.log(`   - bottom.jpg (또는 bottom.png) : 최저가 건물 사진`);
+  } finally {
+    await browser.close();
+  }
 }
 
-main().catch(console.error);
+main().catch((err) => {
+  console.error('오류가 발생했습니다:', err.message);
+  process.exit(1);
+});

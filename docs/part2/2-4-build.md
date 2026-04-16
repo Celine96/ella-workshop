@@ -14,7 +14,7 @@
 아래 중 하나를 고르거나, 본인만의 아이디어를 선택해 주세요.
 
 <table style="width:100%; table-layout:fixed;">
-<tr><th style="width:40%">옵션</th><th style="width:60%">설명</th></tr>
+<tr><th scope="col" style="width:40%">옵션</th><th scope="col" style="width:60%">설명</th></tr>
 <tr><td>A. 디자인 작업 개선</td><td>기존에 수작업으로 하던 디자인 작업을 클로드로 개선</td></tr>
 <tr><td>B. 데이터 + 디자인 파이프라인</td><td>데이터를 가져와서 자동으로 디자인 결과물 생성</td></tr>
 <tr><td>C. 콘텐츠 호스팅 자동화</td><td>수동으로 올리던 콘텐츠를 자동 게시</td></tr>

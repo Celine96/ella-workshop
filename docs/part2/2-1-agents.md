@@ -21,7 +21,7 @@
 위 개념들이 실제로 어떻게 동작하는지, 1.4에서 체험한 카드뉴스 자동화 파이프라인을 예시로 살펴볼게요.
 
 <table style="width:100%; table-layout:fixed;">
-<tr><th style="width:6%">순서</th><th style="width:18%">에이전트</th><th style="width:22%">작업</th><th style="width:54%">세부 내용</th></tr>
+<tr><th scope="col" style="width:6%">순서</th><th scope="col" style="width:18%">에이전트</th><th scope="col" style="width:22%">작업</th><th scope="col" style="width:54%">세부 내용</th></tr>
 <tr><td>1</td><td>Max (매니저)</td><td>오늘 할 일 계획</td><td>일일 계획 수립, KPI 추적</td></tr>
 <tr><td>2</td><td>Aria (콘텐츠)</td><td>카드뉴스 제작</td><td>데이터 수집, 이미지 생성, 캡션 작성 (필요시 서브에이전트로 분리)</td></tr>
 <tr><td>3</td><td>Luna (검수)</td><td>품질 체크</td><td>금지어 확인, 법률 준수 확인</td></tr>

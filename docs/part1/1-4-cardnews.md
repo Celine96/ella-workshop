@@ -15,9 +15,9 @@ node render_cards.js --now       # 카드뉴스 생성
 
 이 커맨드를 실행하면 아래와 같은 카드뉴스가 만들어져요:
 
-![표지](/images/slide_1_cover.png){style="width: 30%; display: inline-block; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);"}
-![최고가](/images/slide_2_top.png){style="width: 30%; display: inline-block; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);"}
-![최저가](/images/slide_3_bottom.png){style="width: 30%; display: inline-block; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);"}
+![실거래가 카드뉴스 표지 슬라이드](/images/slide_1_cover.png){style="width: 30%; display: inline-block; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);"}
+![서울 마포구 양화로 최고가 거래 카드뉴스](/images/slide_2_top.png){style="width: 30%; display: inline-block; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);"}
+![서울 구로구 도림로 최저가 거래 카드뉴스](/images/slide_3_bottom.png){style="width: 30%; display: inline-block; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);"}
 
 ---
 
