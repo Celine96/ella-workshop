@@ -76,9 +76,28 @@ Step 6. 아래 화면이 나오면 성공이에요:
 You:
 ```
 
+### [실습] 실습 패키지 설치
+
+1.4 실습 2에서 사용할 자동화 스크립트(`render_cards.js`)가 `playwright`라는 패키지를 필요로 해요. 미리 설치해둘게요.
+
+Step 1. 클로드 코드를 종료하고(`Ctrl+D` 또는 `/quit`) 터미널에서 `나나님` 폴더에 있는지 확인해 주세요.
+
+Step 2. 아래 명령어를 입력해 주세요:
+
+```
+npm install
+```
+
+> Node.js가 없다는 오류가 나오면 https://nodejs.org 에서 LTS 버전을 먼저 설치해 주세요.
+
+> 설치가 완료되면 `node_modules` 폴더가 생성돼요. 시간이 조금 걸릴 수 있어요 (1~3분).
+
+Step 3. 설치가 끝나면 다시 `claude`를 입력해서 클로드 코드를 실행해 주세요.
+
 ### [체크포인트]
 - [ ] `claude --version`으로 설치 확인 완료
 - [ ] "Claude account with subscription"으로 로그인 완료
 - [ ] 대화창이 정상 표시됨
+- [ ] `npm install`로 실습 패키지 설치 완료
 
 ---

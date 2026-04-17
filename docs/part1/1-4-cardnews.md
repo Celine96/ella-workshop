@@ -30,6 +30,7 @@ node render_cards.js --now       # 카드뉴스 생성
 ├── 나나님_클로드코드_워크숍_워크북.md               ← 이 워크북
 ├── 실거래가_단계적매칭_서울전체_완전판_오차10%.csv   ← 실거래가 데이터
 ├── render_cards.js                                 ← 자동화 커맨드 스크립트
+├── package.json / package-lock.json                ← 패키지 정보 (npm install로 사용)
 ├── templates/                                      ← 카드뉴스 HTML 템플릿
 │   ├── card_cover.html
 │   └── card_data.html
