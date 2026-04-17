@@ -36,7 +36,7 @@ table:not([style]):has(th:nth-child(3)) td:nth-child(3) {
     table-layout: auto;
     display: block;
     overflow-x: auto;
-    white-space: normal;
+    white-space: nowrap;
   }
 
   .vp-doc table th,
