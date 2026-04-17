@@ -15,7 +15,7 @@
 ### [개념] ChatGPT와 뭐가 다른가요?
 
 <table style="width:100%; table-layout:fixed;">
-<tr><th scope="col" style="width:16%">기능</th><th scope="col" style="width:22%">ChatGPT</th><th scope="col" style="width:48%">클로드 코드</th><th scope="col" style="width:14%">비고</th></tr>
+<tr><th scope="col" style="width:15%">기능</th><th scope="col" style="width:21%">ChatGPT</th><th scope="col" style="width:52%">클로드 코드</th><th scope="col" style="width:12%">비고</th></tr>
 <tr><td>파일 접근<br/>(File Access)</td><td>불가</td><td>내 컴퓨터 파일을 직접 읽고 수정할 수 있음</td><td></td></tr>
 <tr><td>기억력<br/>(Memory)</td><td>대화가 끝나면 사라짐</td><td>프로젝트 설정 파일에 저장해서 다음에도 기억함</td><td>2부 2.5</td></tr>
 <tr><td>실행력<br/>(Execution)</td><td>지시한 작업을 실행</td><td>지시한 목표를 달성</td><td></td></tr>
